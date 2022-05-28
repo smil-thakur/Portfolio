@@ -63181,14 +63181,14 @@ s=t.p
 r=A.cj(A.a([B.kG,A.T("My Skills and Experiences",h,h,h,A.V0(50,B.a4),h,h)],s),B.o,B.t,B.n)
 q=A.b8(25)
 p=this.a.c
-o=A.na("1) Online Meet App\n2) Hotel Service App\n3)Daily NEWS app\n4)Draw and guess game","assets/projects/flutter.png",25,u.E,"Flutter Framework",p?1:120)
-n=A.na("DSA","assets/projects/cpp.png",25,u.T,"C++ language",p?1:120)
-m=A.na("","assets/projects/pygameskill.png",25,u.W,"pygame python library",p?1:120)
+o=A.na("1) Online Meet App\n2) Hotel Service App\n3)Daily NEWS app\n4)Draw and guess game","assets/projects/flutter.PNG",25,u.E,"Flutter Framework",p?1:120)
+n=A.na("DSA","assets/projects/cpp.PNG",25,u.T,"C++ language",p?1:120)
+m=A.na("","assets/projects/pygameskill.PNG",25,u.W,"pygame python library",p?1:120)
 l=A.na(g,"assets/projects/ido.png",25,u.m,"iDO Leading Innovations",p?1:120)
 k=A.na(g,"assets/projects/unitap.png",25,"Worked as Lead of App developement team,","UniTap Student Management Resource",p?1:120)
-j=A.na(g,"assets/projects/ros.png",25,u.z,"ROBOT OPERATING SYSTEM",p?1:120)
-i=A.na(g,"assets/projects/firebase.png",25,u._,"Firebase Backend Server",p?1:120)
-return A.eH(B.ak,A.a([new A.lx(4278584838,h),A.a8(h,A.bd(A.a([B.cD,r,new A.aZ(B.fj,A.a8(h,new A.aZ(B.aN,A.acf(A.a([o,n,m,l,k,j,i,A.na(g,"assets/projects/dart.png",25,u.X,"Object Oreinted Language",p?1:120)],s),B.f1,!0),h),h,h,new A.b9(new A.B(4279374097),h,h,q,h,h,B.x),h,h,h,1000),h)],s),B.o,B.t,B.db),h,new A.as(f.a.a,1/0,e.a.b,1/0),h,h,h,h,h)],s),B.ao)}}
+j=A.na(g,"assets/projects/ros.PNG",25,u.z,"ROBOT OPERATING SYSTEM",p?1:120)
+i=A.na(g,"assets/projects/firebase.PNG",25,u._,"Firebase Backend Server",p?1:120)
+return A.eH(B.ak,A.a([new A.lx(4278584838,h),A.a8(h,A.bd(A.a([B.cD,r,new A.aZ(B.fj,A.a8(h,new A.aZ(B.aN,A.acf(A.a([o,n,m,l,k,j,i,A.na(g,"assets/projects/dart.PNG",25,u.X,"Object Oreinted Language",p?1:120)],s),B.f1,!0),h),h,h,new A.b9(new A.B(4279374097),h,h,q,h,h,B.x),h,h,h,1000),h)],s),B.o,B.t,B.db),h,new A.as(f.a.a,1/0,e.a.b,1/0),h,h,h,h,h)],s),B.ao)}}
 A.xp.prototype={
 a4(){return new A.Nk(B.k)}}
 A.Nk.prototype={
