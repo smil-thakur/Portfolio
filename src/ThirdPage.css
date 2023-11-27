@@ -1,0 +1,42 @@
+.main-tp-desktop {
+    min-height: 100vh;
+    color: white;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.title-tp {
+    margin-left: 20px;
+    font-family: 'inter', sans-serif;
+    font-weight: bolder;
+    font-size: 10vw;
+}
+.main-tp-mobile{
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+
+    .main-tp-mobile{
+        display: block;
+        background-color: black;
+        font-family: 'inter',sans-serif;
+        min-height: 100vh;
+        color: white;
+        z-index: 1;
+    }
+    .main-tp-desktop{
+        display: none;
+    }
+
+    .title-tp{
+        text-align: center;
+        margin-left: 0;
+        font-size: 15vw;
+        padding-top: 50px;
+    }
+
+}

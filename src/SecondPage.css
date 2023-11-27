@@ -1,0 +1,252 @@
+.main-sp-desktop{
+    min-width: 100%;
+    min-height: 100vh;
+    color: white;
+    font-family: 'inter',sans-serif;
+    background-image: url("./assets/spbgup.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.title-sp {
+    font-family: 'Caveat brush',cursive;
+    color: white; 
+    text-align: center;
+    font-weight: bolder;
+    font-size: 10vw;
+    mix-blend-mode: difference;
+  }
+
+  .social-scroll{
+    mix-blend-mode: difference;
+    font-size: 6vw;
+    font-weight: bold;
+    
+  }
+
+
+  .social-marquee{
+    mix-blend-mode: difference;
+  }
+
+  .social-scroll-item{
+    font-size: 6vw;
+    font-weight: bold;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+    mix-blend-mode: difference;
+  }
+
+.social-title-icon-desktop-sp{
+    mix-blend-mode: normal;
+}
+
+.main-sp-mobile{
+    display: none;
+}
+
+.social-title-sp{
+    mix-blend-mode: difference;
+    font-size: 6vw;
+    font-weight: bold;
+    font-family: 'Nanum Brush Script', cursive;
+
+}
+
+.main-block-mobile-sp{
+    display: none;
+}
+
+
+
+
+
+  @media (max-width: 600px) {
+
+    .main-block-mobile-sp{
+        display: flex;
+        position: relative;
+       
+    }
+    
+    .sidewalk-1{
+        position: absolute;
+        color: white;
+        left: 0;
+        top: -45px;
+        transform: rotate(90deg) ;
+        transform-origin: 0 100%;
+        mix-blend-mode: difference;
+        font-family: 'Caveat brush',cursive;
+        font-size: 10vw;
+        width: 100vh;
+
+    }
+
+    .main-sp-desktop{
+        display: none;
+    }
+
+    .main-sp-mobile{
+        display: block;
+        min-width: 100%;
+        min-height: 100vh;
+        color: white;
+        font-family: 'inter',sans-serif;
+        background-image: url("./assets/spbgup.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        overflow: scroll;
+        
+    }
+
+    .title-sp {
+        font-family: 'Caveat brush',cursive;
+        color: white; 
+        text-align: center;
+        font-weight: bolder;
+        font-size: 15vw;
+        mix-blend-mode: difference;
+      }
+
+      .social-item-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-scroll-title{
+        text-align: center;
+        font-family: 'Nanum Brush Script', cursive;
+        font-size: 2rem;
+        color: white;
+        mix-blend-mode: difference;
+      }
+
+      .social-scroll-item{
+        text-align: center;
+        mix-blend-mode: difference;
+      }
+
+      .social-item-sp-mobile{
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 3rem;
+        height: 100vh;
+      }
+  
+
+      .sidewalk-2{
+        right: 45px;
+        top: 0;
+        color: white;
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: 100% 0;
+        font-family: 'Caveat brush',cursive;
+        font-size: 10vw;
+        mix-blend-mode: difference;
+        width: 100vh;
+      }
+
+  }
+
+
+  @media only screen and (min-width: 768px) and (max-width: 900px) {
+    
+    .main-block-mobile-sp{
+        display: flex;
+        position: relative;
+       
+    }
+    
+    .sidewalk-1{
+        position: absolute;
+        color: white;
+        left: 0;
+        top: -95px;
+        transform: rotate(90deg) ;
+        transform-origin: 0 100%;
+        mix-blend-mode: difference;
+        font-family: 'Caveat brush',cursive;
+        font-size: 10vw;
+        width: 100vh;
+
+    }
+
+    .main-sp-desktop{
+        display: none;
+    }
+
+    .main-sp-mobile{
+        display: block;
+        min-width: 100%;
+        min-height: 80vh;
+        color: white;
+        font-family: 'inter',sans-serif;
+        background-image: url("./assets/spbgup.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        overflow: scroll;
+
+        
+    }
+
+    .title-sp {
+        font-family: 'Caveat brush',cursive;
+        color: white; 
+        text-align: center;
+        font-weight: bolder;
+        font-size: 15vw;
+        mix-blend-mode: difference;
+      }
+
+      .social-item-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-scroll-title{
+        text-align: center;
+        font-family: 'Nanum Brush Script', cursive;
+        font-size: 2rem;
+        color: white;
+        mix-blend-mode: difference;
+      }
+
+      .social-scroll-item{
+        text-align: center;
+        mix-blend-mode: difference;
+      }
+
+      .social-item-sp-mobile{
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 3rem;
+        height: 100vh;
+      }
+  
+
+      .sidewalk-2{
+        right: 90px;
+        top: 0;
+        color: white;
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: 100% 0;
+        font-family: 'Caveat brush',cursive;
+        font-size: 10vw;
+        mix-blend-mode: difference;
+        width: 100vh;
+      }
+}

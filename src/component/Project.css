@@ -1,0 +1,148 @@
+.index-project{
+    font-family: 'inter', sans-serif;
+    font-weight: bold;
+    font-size: 3vw;
+    border: white 2px solid;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+
+}
+
+.divider-project{
+    height: 2px;
+    background-color: white;
+    flex-grow: 1;
+}
+
+.index-container-project{
+    display: flex;
+    justify-content: safe;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.title-project{
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    font-family: 'Caveat brush',cursive;
+    font-weight: bolder;
+    font-size: 8vw;
+    border-radius: 0px;
+    text-align: end;
+    color: #F4CE14;
+   
+}
+
+.image-tech-container{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+
+}
+
+.project-image {
+    z-index: 1;
+    margin-top: 20px;
+    border-radius: 10px;
+    flex-grow: 1;
+    transition: transform 0.3s ease; /* Adding a transition for a smooth effect */
+}
+
+.project-image:hover {
+    transform: rotate(5deg); /* You can adjust the degree of rotation as needed */
+}
+
+.tech-container-project{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.tech-logos-project{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech-logos-project >img{
+    margin: 10px;
+}
+
+.desc-project-container{
+    font-family: 'inter', sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-size: large;
+    
+   
+}
+
+.urls-project{
+    text-align: center;
+    font-family: 'inter',sans-serif;
+    display: flex;
+    margin-top: 100px;
+    justify-content: end;
+}
+
+.urls-project > a > div{
+    margin: 10px;
+    border: 2px white solid;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+
+.urls-project > a > div {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.urls-project > a > div:hover {
+    background-color: black;
+    color: white;
+    animation-duration: 1000ms;
+}
+
+.main-project{
+    position: relative;
+}
+
+
+.stack-tp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circletri-project{
+    position: absolute;
+    color: white;
+    z-index: 0;
+    animation: rotate 10s  infinite;
+    mix-blend-mode: difference;
+
+}
+
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
