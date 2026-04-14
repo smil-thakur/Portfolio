@@ -81,7 +81,7 @@ export const projectsData: ProjectData[] = [
     description: "A cross-platform native AI assistant blending lightning-fast file search with intelligent agent capabilities. Instantly summarize local files, parse documentation, run complex terminal routines, and execute commands hands-free.",
     github: "https://github.com/smil-thakur/global-agent-hackathon-may-2025/tree/main/submissions/Clippy",
     youtube: "https://www.youtube.com/watch?v=D_rcu602wCc",
-    image: "/assets_clippy/clippy-alpha3-multi-agent.gif",
+    image: "https://raw.githubusercontent.com/smil-thakur/global-agent-hackathon-may-2025/main/submissions/Clippy/src/assets/clippy-alpha3-multi-agent.gif",
     readmeUrl: "https://raw.githubusercontent.com/smil-thakur/global-agent-hackathon-may-2025/main/submissions/Clippy/README.md"
   }
 ];
