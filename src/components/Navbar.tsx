@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -20,6 +20,8 @@ const links: NavLink[] = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +30,27 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const id = href.replace("/#", "");
+      
+      if (location.pathname !== "/") {
+        navigate("/");
+        // Wait for React to render the homepage before scrolling
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        // We are already on the homepage
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }
+      setMobileMenuOpen(false);
+    } else if (!href.startsWith("http")) {
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <header
@@ -39,42 +62,55 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        <motion.a
-          href="#"
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-xl font-bold tracking-tighter"
         >
-          SRT
-        </motion.a>
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-xl font-bold tracking-tighter"
+          >
+            SRT
+          </Link>
+        </motion.div>
 
         <nav className="hidden md:flex gap-8">
           {links.map((link, i) => {
-            const isRouterLink = link.href.startsWith("/") && !link.href.startsWith("/#");
-            
-            if (isRouterLink) {
+            const isExternal = link.href.startsWith("http");
+
+            if (isExternal) {
               return (
-                <Link
+                <motion.a
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
                   className="text-sm font-medium hover:text-stone-500 transition-colors"
                 >
                   {link.name}
-                </Link>
+                </motion.a>
               );
             }
 
             return (
-              <motion.a
+              <motion.div
                 key={link.name}
-                href={link.href}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="text-sm font-medium hover:text-stone-500 transition-colors"
               >
-                {link.name}
-              </motion.a>
+                <Link
+                  to={link.href.startsWith("/#") ? "/" : link.href}
+                  className="text-sm font-medium hover:text-stone-500 transition-colors"
+                  onClick={(e) => handleNavClick(e, link.href)}
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
             );
           })}
         </nav>
@@ -102,25 +138,32 @@ export default function Navbar() {
               className="absolute top-14 left-0 w-full bg-stone-50 dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 flex flex-col px-6 py-4 md:hidden"
             >
               {links.map((link) => {
-                const isRouterLink = link.href.startsWith("/") && !link.href.startsWith("/#");
-                return isRouterLink ? (
+                const isExternal = link.href.startsWith("http");
+
+                if (isExternal) {
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-4 text-lg font-medium border-b border-stone-200 dark:border-stone-800 last:border-0"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  );
+                }
+
+                return (
                   <Link
                     key={link.name}
-                    to={link.href}
+                    to={link.href.startsWith("/#") ? "/" : link.href}
                     className="py-4 text-lg font-medium border-b border-stone-200 dark:border-stone-800 last:border-0"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                   >
                     {link.name}
                   </Link>
-                ) : (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="py-4 text-lg font-medium border-b border-stone-200 dark:border-stone-800 last:border-0"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
                 );
               })}
             </motion.div>

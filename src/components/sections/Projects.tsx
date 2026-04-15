@@ -12,6 +12,27 @@ const YoutubeIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
 );
 
+function TileImage({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="relative mb-6 w-full h-48 md:h-64 overflow-hidden rounded-xl bg-stone-200 dark:bg-stone-800">
+      {!loaded && (
+        <div className="absolute inset-0 animate-pulse bg-stone-300/50 dark:bg-stone-700/50" />
+      )}
+      <motion.img
+        src={src}
+        alt={alt}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: loaded ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+        onLoad={() => setLoaded(true)}
+        className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
+      />
+    </div>
+  );
+}
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
 
@@ -46,13 +67,7 @@ export default function Projects() {
               className={`group p-6 rounded-2xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 transition-colors hover:border-stone-400 dark:hover:border-stone-500 flex flex-col h-full cursor-pointer ${i === 2 ? 'md:col-span-2 md:w-1/2 md:mx-auto' : ''}`}
             >
               {project.image && (
-                <div className="mb-6 w-full h-48 md:h-64 overflow-hidden rounded-xl bg-stone-200 dark:bg-stone-800">
-                  <img 
-                    src={project.image} 
-                    alt={`${project.title} Screenshot`} 
-                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
-                  />
-                </div>
+                <TileImage src={project.image} alt={`${project.title} Screenshot`} />
               )}
               
               <div className="flex justify-between items-start mb-4">
