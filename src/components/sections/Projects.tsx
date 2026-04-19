@@ -64,7 +64,7 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               onClick={() => setSelectedProject(project)}
-              className={`group p-6 rounded-2xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 transition-colors hover:border-stone-400 dark:hover:border-stone-500 flex flex-col h-full cursor-pointer ${i === 2 ? 'md:col-span-2 md:w-1/2 md:mx-auto' : ''}`}
+              className="group p-6 rounded-2xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 transition-colors hover:border-stone-400 dark:hover:border-stone-500 flex flex-col h-full cursor-pointer"
             >
               {project.image && (
                 <TileImage src={project.image} alt={`${project.title} Screenshot`} />
